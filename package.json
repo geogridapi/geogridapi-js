@@ -1,0 +1,79 @@
+{
+  "name": "geogridapi",
+  "version": "0.1.0",
+  "description": "Official Node.js and TypeScript SDK for GeoGridAPI: Google Maps geo-grid rank tracking for local SEO. Run rank grids around a Google Business Profile, get ranks at every point, competitors ahead, trends and PNG heatmaps.",
+  "license": "MIT",
+  "author": {
+    "name": "GeoGridAPI",
+    "email": "sav@localnord.fr",
+    "url": "https://geogridapi.io"
+  },
+  "homepage": "https://geogridapi.io/en/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geogridapi/geogridapi-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/geogridapi/geogridapi-js/issues"
+  },
+  "keywords": [
+    "geogridapi",
+    "geogrid",
+    "geo-grid",
+    "local-seo",
+    "local seo",
+    "google-maps",
+    "google maps",
+    "rank-tracker",
+    "rank tracker",
+    "local rank tracker",
+    "google-business-profile",
+    "google my business",
+    "gmb",
+    "heatmap",
+    "serp",
+    "maps ranking",
+    "sdk",
+    "api"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
